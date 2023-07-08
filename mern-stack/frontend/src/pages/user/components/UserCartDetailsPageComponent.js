@@ -18,7 +18,7 @@ const UserCartDetailsPageComponent = ({cartItems, itemsCount, cartSubtotal, user
     const [buttonDisabled, setButtonDisabled] = useState(false);
     const [userAddress, setUserAddress] = useState(false);
     const [missingAddress, setMissingAddress] = useState("");
-    const [paymentMethod, setPaymentMethod] = useState("pp");
+    const [paymentMethod, setPaymentMethod] = useState("cod");
 
     const navigate = useNavigate();
 

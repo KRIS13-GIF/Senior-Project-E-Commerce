@@ -56,12 +56,11 @@ const HeaderComponent = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <LinkContainer to="/">
-          <Navbar.Brand href="/">E-Commerce App</Navbar.Brand>
-        </LinkContainer>
+          <Navbar.Brand href={userIsAdmin ? "":"/"}>E-Commerce App</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
+            {!userIsAdmin && (
             <InputGroup>
               <DropdownButton id="dropdown-basic-button" title={searchCategoryToggle}>
                   <Dropdown.Item onClick={() => setSearchCategoryToggle("All")}>All</Dropdown.Item>
@@ -74,6 +73,7 @@ const HeaderComponent = () => {
                 <i className="bi bi-search text-dark"></i>
               </Button>
             </InputGroup>
+            )}
           </Nav>
           <Nav>
             {userInfo.isAdmin ? (
