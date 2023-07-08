@@ -30,6 +30,8 @@ const HeaderComponent = () => {
 
   const navigate = useNavigate();
 
+  const userIsAdmin = userInfo?.isAdmin
+
   useEffect(() => {
     dispatch(getCategories());
   }, [dispatch]);
@@ -109,7 +111,7 @@ const HeaderComponent = () => {
                 </LinkContainer>
               </>
             )}
-
+          {!userIsAdmin && (
             <LinkContainer to="/cart">
               <Nav.Link>
                 <Badge pill bg="danger">
@@ -119,6 +121,7 @@ const HeaderComponent = () => {
                 <span className="ms-1">CART</span>
               </Nav.Link>
             </LinkContainer>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
