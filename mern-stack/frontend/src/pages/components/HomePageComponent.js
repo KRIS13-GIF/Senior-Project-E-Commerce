@@ -28,7 +28,11 @@ const HomePageComponent = ({ categories, getBestsellers }) => {
     <MetaComponent />
       <ProductCarouselComponent bestSellers={bestSellers} />
       <Container>
-        <Row xs={1} md={2} className="g-4 mt-5">
+        <Row xs={1} md={2} className="g-4 mt-5" style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
           {mainCategories.map((category, idx) => (
             <CategoryCardComponent key={idx} category={category} idx={idx} />
           ))}

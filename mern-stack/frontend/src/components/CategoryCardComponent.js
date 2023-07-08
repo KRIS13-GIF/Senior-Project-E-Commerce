@@ -4,7 +4,17 @@ import { LinkContainer } from "react-router-bootstrap";
 const CategoryCardComponent = ({ category, idx }) => {
   
   return (
-    <Card>
+    <Card style={{
+      display: 'flex',
+      width: '20%',
+      marginRight: '10px',
+      justifyContent: 'center',
+      alignItems: 'center',
+      fontSize: '12px',
+      padding: '20px',
+      paddingBottom: '5px',
+      borderColor: '#0C6DFD',
+    }}>
       <Card.Img crossOrigin="anonymous" variant="top" src={category.image ?? null} />
       <Card.Body>
         <Card.Title>{category.name}</Card.Title>
@@ -12,7 +22,7 @@ const CategoryCardComponent = ({ category, idx }) => {
           {category.description}
         </Card.Text>
         <LinkContainer to={`/product-list/category/${category.name}`}>
-          <Button variant="primary">Go to the Category</Button>
+          <Button size="sm" variant="primary">Go to the Category</Button>
         </LinkContainer>
       </Card.Body>
     </Card>
