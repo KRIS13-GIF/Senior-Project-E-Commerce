@@ -1,5 +1,4 @@
 import { Outlet, Navigate } from "react-router-dom";
-import UserChatComponent from "./user/UserChatComponent";
 
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -25,7 +24,6 @@ const ProtectedRoutesComponent = ({ admin }) => {
       <Outlet />
   ) : isAuth && !admin ? (
       <>
-      <UserChatComponent />
       <Outlet />
       </>
   ) : (
