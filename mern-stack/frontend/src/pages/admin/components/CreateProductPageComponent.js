@@ -222,17 +222,6 @@ const CreateProductPageComponent = ({
               </Form.Select>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicNewCategory">
-              <Form.Label>
-                Or create a new category (e.g. Computers/Laptops/Intel){" "}
-              </Form.Label>
-              <Form.Control
-                onKeyUp={newCategoryHandler}
-                name="newCategory"
-                type="text"
-              />
-            </Form.Group>
-
             {attributesFromDb.length > 0 && (
               <Row className="mt-5">
                 <Col md={6}>
@@ -295,39 +284,6 @@ const CreateProductPageComponent = ({
                   </tbody>
                 </Table>
               )}
-            </Row>
-
-            <Row>
-              <Col md={6}>
-                <Form.Group className="mb-3" controlId="formBasicNewAttribute">
-                  <Form.Label>Create new attribute</Form.Label>
-                  <Form.Control
-                  ref={createNewAttrKey}
-                    disabled={["", "Choose category"].includes(categoryChoosen)}
-                    placeholder="first choose or create category"
-                    name="newAttrValue"
-                    type="text"
-                    onKeyUp={newAttrKeyHandler}
-                  />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Group
-                  className="mb-3"
-                  controlId="formBasicNewAttributeValue"
-                >
-                  <Form.Label>Attribute value</Form.Label>
-                  <Form.Control
-                  ref={createNewAttrVal}
-                    disabled={["", "Choose category"].includes(categoryChoosen)}
-                    placeholder="first choose or create category"
-                    required={newAttrKey}
-                    name="newAttrValue"
-                    type="text"
-                    onKeyUp={newAttrValueHandler}
-                  />
-                </Form.Group>
-              </Col>
             </Row>
 
             <Alert show={newAttrKey && newAttrValue} variant="primary">

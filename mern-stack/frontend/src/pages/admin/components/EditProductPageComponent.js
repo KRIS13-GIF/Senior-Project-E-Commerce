@@ -302,39 +302,7 @@ const EditProductPageComponent = ({
               )}
             </Row>
 
-            <Row>
-              <Col md={6}>
-                <Form.Group className="mb-3" controlId="formBasicNewAttribute">
-                  <Form.Label>Create new attribute</Form.Label>
-                  <Form.Control
-                  ref={createNewAttrKey}
-                    disabled={categoryChoosen === "Choose category"}
-                    placeholder="first choose or create category"
-                    name="newAttrKey"
-                    type="text"
-                    onKeyUp={newAttrKeyHandler}
-                    required={newAttrValue}
-                  />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Group
-                  className="mb-3"
-                  controlId="formBasicNewAttributeValue"
-                >
-                  <Form.Label>Attribute value</Form.Label>
-                  <Form.Control
-                  ref={createNewAttrVal}
-                    disabled={categoryChoosen === "Choose category"}
-                    placeholder="first choose or create category"
-                    required={newAttrKey}
-                    name="newAttrValue"
-                    type="text"
-                    onKeyUp={newAttrValueHandler}
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
+
 
             <Alert show={newAttrKey && newAttrValue} variant="primary">
               After typing attribute key and value press enterr on one of the

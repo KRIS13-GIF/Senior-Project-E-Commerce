@@ -15,7 +15,6 @@ const UserOrderDetailsPageComponent = ({
   userInfo,
   getUser,
   getOrder,
-  loadPayPalScript,
 }) => {
   const [userAddress, setUserAddress] = useState({});
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -26,7 +25,6 @@ const UserOrderDetailsPageComponent = ({
   const [isDelivered, setIsDelivered] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
-  const paypalContainer = useRef();
 
 
   const { id } = useParams();
@@ -71,26 +69,21 @@ const UserOrderDetailsPageComponent = ({
       .catch((err) => console.log(err));
   }, []);
 
-  const orderHandler = () => {
-    setButtonDisabled(true);
-    if (paymentMethod === "pp") {
-      setOrderButtonMessage(
-        "To pay for your order click one of the buttons below"
-      );
-      if (!isPaid) {
-        loadPayPalScript(cartSubtotal, cartItems, id, updateStateAfterOrder)
-      }
-    } else {
-      setOrderButtonMessage("Your order was placed. Thank you");
-    }
-  };
 
   const updateStateAfterOrder = (paidAt) => {
       setOrderButtonMessage("Thank you for your payment!");
       setIsPaid(paidAt);
       setButtonDisabled(true);
-      paypalContainer.current.style = "display: none";
   }
+
+  const dateObj = new Date(isDelivered);
+
+  // Formatting the date and time
+  const formattedDate = ` ${dateObj.getUTCDate()}/${dateObj.getUTCMonth() + 1}/${dateObj.getUTCFullYear()}`;
+  const formattedTime = ` ${dateObj.getUTCHours()}:${dateObj.getUTCMinutes()}:${dateObj.getUTCSeconds()}`;
+
+  // Merging date and time
+  const mergedDateTime = `${formattedDate} ${formattedTime}`;
 
   return (
     <Container fluid>
@@ -109,7 +102,6 @@ const UserOrderDetailsPageComponent = ({
             <Col md={6}>
               <h2>Payment method</h2>
               <Form.Select value={paymentMethod} disabled={true}>
-                <option value="pp">PayPal</option>
                 <option value="cod">
                   Cash On Delivery (delivery may be delayed)
                 </option>
@@ -122,15 +114,15 @@ const UserOrderDetailsPageComponent = ({
                   variant={isDelivered ? "success" : "danger"}
                 >
                   {isDelivered ? (
-                    <>Delivered at {isDelivered}</>
+                    <>Delivered at {mergedDateTime}</>
                   ) : (
                     <>Not delivered</>
                   )}
                 </Alert>
               </Col>
               <Col>
-                <Alert className="mt-3" variant={isPaid ? "success" : "danger"}>
-                  {isPaid ? <>Paid on {isPaid}</> : <>Not paid yet</>}
+                <Alert className="mt-3" variant={isDelivered ? "success" : "danger"}>
+                  {isDelivered ? <>Paid on {mergedDateTime}</> : <>Not paid yet</>}
                 </Alert>
               </Col>
             </Row>
@@ -160,22 +152,6 @@ const UserOrderDetailsPageComponent = ({
             </ListGroup.Item>
             <ListGroup.Item className="text-danger">
               Total price: <span className="fw-bold">${cartSubtotal}</span>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <div className="d-grid gap-2">
-                <Button
-                  size="lg"
-                  onClick={orderHandler}
-                  variant="danger"
-                  type="button"
-                  disabled={buttonDisabled}
-                >
-                  {orderButtonMessage}
-                </Button>
-              </div>
-              <div style={{ position: "relative", zIndex: 1 }}>
-                <div ref={paypalContainer} id="paypal-container-element"></div>
-              </div>
             </ListGroup.Item>
           </ListGroup>
         </Col>

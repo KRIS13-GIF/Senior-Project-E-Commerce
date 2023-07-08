@@ -29,6 +29,16 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
     useState("Mark as delivered");
   const [cartItems, setCartItems] = useState([]);
 
+  const dateObj = new Date(isDelivered);
+
+  // Formatting the date and time
+  const formattedDate = ` ${dateObj.getUTCDate()}/${dateObj.getUTCMonth() + 1}/${dateObj.getUTCFullYear()}`;
+  const formattedTime = ` ${dateObj.getUTCHours()}:${dateObj.getUTCMinutes()}:${dateObj.getUTCSeconds()}`;
+
+  // Merging date and time
+  const mergedDateTime = `${formattedDate} ${formattedTime}`;
+
+
   useEffect(() => {
     getOrder(id)
       .then((order) => {
@@ -69,7 +79,6 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
             <Col md={6}>
               <h2>Payment method</h2>
               <Form.Select value={paymentMethod} disabled={true}>
-                <option value="pp">PayPal</option>
                 <option value="cod">
                   Cash On Delivery (delivery may be delayed)
                 </option>
@@ -82,15 +91,15 @@ const OrderDetailsPageComponent = ({ getOrder, markAsDelivered }) => {
                   variant={isDelivered ? "success" : "danger"}
                 >
                   {isDelivered ? (
-                    <>Delivered at {isDelivered}</>
+                    <>Delivered at: {mergedDateTime}</>
                   ) : (
                     <>Not delivered</>
                   )}
                 </Alert>
               </Col>
               <Col>
-                <Alert className="mt-3" variant={isPaid ? "success" : "danger"}>
-                  {isPaid ? <>Paid on {isPaid}</> : <>Not paid yet</>}
+                <Alert className="mt-3" variant={isDelivered ? "success" : "danger"}>
+                  {isDelivered ? <>Paid on {mergedDateTime}</> : <>Not paid yet</>}
                 </Alert>
               </Col>
             </Row>

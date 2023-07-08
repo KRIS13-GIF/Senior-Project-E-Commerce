@@ -94,7 +94,6 @@ const UserCartDetailsPageComponent = ({cartItems, itemsCount, cartSubtotal, user
             <Col md={6}>
               <h2>Payment method</h2>
               <Form.Select onChange={choosePayment}>
-                <option value="pp">PayPal</option>
                 <option value="cod">
                   Cash On Delivery (delivery may be delayed)
                 </option>

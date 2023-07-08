@@ -27,7 +27,6 @@ const orders = Array.from({length: 22}).map((_, idx) => {
                 count: 12
             }
         ],
-        paymentMethod: "PayPal",
         isPaid: false,
         isDelivered: false,
         createdAt: `2022-03-${day}T${hour}:12:36.490+00:00`
