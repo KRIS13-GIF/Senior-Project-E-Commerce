@@ -1,80 +1,39 @@
 const categories = [
-    {
-    name: "Computers",
+ {
+    name: "Books",
     description:
-      "Computers - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
-    attrs: [
-      { key: "RAM", value: ["1 TB", "2 TB", "4 TB"] },
-      { key: "color", value: ["blue", "red", "green", "black"] },
-    ],
-  },
-  {
-    name: "Computers/Laptops",
-    description:
-      "Computers/Laptops - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
-  },
-  {
-    name: "Computers/Laptops/Lenovo",
-    description:
-      "Computers/Laptops/Lenovo - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
-  },
-  {
-    name: "Computers/Laptops/Dell",
-    description:
-      "Computers/Laptops/Dell - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
+      "We Have a Vast Selection Of Books In Hardcover, Paperback and Audiobook Formats. Enjoy Great Deals and Discounts On an Array Of Products From Various Brands.",
+    image: "/images/books-category.png",
+    attrs: [{ key: "genre", value: ["movie", "comedy", "thriller"] }],
   },
   {
     name: "Tablets",
     description:
-      "Tablets - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+      "Shop a wide selection of Tablets",
     image: "/images/tablets-category.png",
+    attrs: [
+      { key: "Storage", value: ["124 GB", "256 GB", "500 GB"] },
+      { key: "Color", value: ["blue", "red", "green", "black"] },
+    ],
   },
   {
-    name: "Monitors",
+    name: "Laptops",
     description:
-      "Monitors - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/monitors-category.png",
+      "Shop a wide selection of Laptops including 2 in 1 and traditional laptops",
+    image: "/images/laptops-category.png",
+    attrs: [
+      { key: "SSD", value: ["1 TB", "2 TB", "4 TB"] },
+      { key: "color", value: ["blue", "red", "green", "black"] },
+    ],
   },
   {
     name: "Games",
     description:
-      "Games - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
+      "Play your favorite games on devices you already own right away.",
     image: "/images/games-category.png",
-  },
-  {
-    name: "Printers",
-    description:
-      "Printers - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
-  },
-  {
-    name: "Software",
-    description:
-      "Software - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/monitors-category.png",
-  },
-  {
-    name: "Cameras",
-    description:
-      "Cameras - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/games-category.png",
-  },
-  {
-    name: "Books",
-    description:
-      "Books - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/tablets-category.png",
-    attrs: [{ key: "genre", value: ["movie", "comedy", "thriller"] }],
-  },
-  {
-    name: "Videos",
-    description:
-      "Videos - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, magnam qui. Accusamus similique placeat at nisi autem eaque molestiae velit.",
-    image: "/images/monitors-category.png",
+    attrs: [
+      { key: "Console", value: ["PS4", "Xbox", "PC"] },
+    ],
   },
 ]
 

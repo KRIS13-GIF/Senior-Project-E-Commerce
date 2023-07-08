@@ -15,7 +15,7 @@ const CategoryCardComponent = ({ category, idx }) => {
       paddingBottom: '5px',
       borderColor: '#0C6DFD',
     }}>
-      <Card.Img crossOrigin="anonymous" variant="top" src={category.image ?? null} />
+      <Card.Img style={{width:"200px", height:"100%"}} crossOrigin="anonymous" variant="top" src={category.image ?? null} />
       <Card.Body>
         <Card.Title>{category.name}</Card.Title>
         <Card.Text>

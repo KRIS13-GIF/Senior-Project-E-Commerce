@@ -43,7 +43,7 @@ const ProductsPageComponent = ({ fetchProducts, deleteProduct }) => {
         <h1>
           Product List{" "}
           <LinkContainer to="/admin/create-new-product">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="sm">
               Create new
             </Button>
           </LinkContainer>
