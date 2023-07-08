@@ -63,10 +63,16 @@ const RegisterPageComponent = ({
     setValidated(true);
   };
   return (
-    <Container>
-      <Row className="mt-5 justify-content-md-center">
-        <Col md={6}>
-          <h1>Register</h1>
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      jusifyContent: 'center',
+      width: '100%',
+      height: '100vh',
+      flexDirection: 'column',
+    }}>
+       
+          <h1 style={{marginTop:"2.5rem"}}>Register</h1>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="validationCustom01">
               <Form.Label>Your name</Form.Label>
@@ -167,9 +173,7 @@ const RegisterPageComponent = ({
               User created
             </Alert>
           </Form>
-        </Col>
-      </Row>
-    </Container>
+          </div>
   );
 };
 

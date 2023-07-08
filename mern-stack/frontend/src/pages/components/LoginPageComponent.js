@@ -45,10 +45,16 @@ const LoginPageComponent = ({ loginUserApiRequest,reduxDispatch, setReduxUserSta
   };
   
   return (
-    <Container>
-      <Row className="mt-5 justify-content-md-center">
-        <Col md={6}>
-          <h1>Login</h1>
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      jusifyContent: 'center',
+      width: '100%',
+      height: '60vh',
+      flexDirection: 'column',
+    }}>
+       
+          <h1 style={{marginTop:"2.5rem"}}>Login</h1>
           <Form noValidate validated={validated} onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -108,9 +114,7 @@ const LoginPageComponent = ({ loginUserApiRequest,reduxDispatch, setReduxUserSta
               Wrong credentials
             </Alert>
           </Form>
-        </Col>
-      </Row>
-    </Container>
+     </div>
   );
 };
 
